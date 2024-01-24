@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body,
+.main-div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+}
+
+.clock-body {
+    height: 280px;
+    width: 580px;
+    position: relative;
+    background-color: #0008ff29;
+    padding: 10px;
+    animation: move 4s infinite alternate-reverse;
+    -webkit-animation: move 4s infinite alternate;
+}
+
+@keyframes move {
+    0%, 100% {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px);
+}
+    50% {
+        transform: translateY(10px);
+        -webkit-transform: translateY(10px);
+        -moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        -o-transform: translateY(10px);
+}
+
+}
+
+/* 
+.row {
+    border: 2px solid green;
+} */
+
+.row-1 {
+    text-align: right;
+    font-size: 10px;
+    padding: 0px 10px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row-2 {
+    height: calc(100% - 60px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.row-2 .hours {
+    font-size: 120px;
+}
+
+.row-2 .dot {
+    font-size: 100px;
+    text-align: center;
+}
+
+.minutes-div {
+    gap: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row-2 .minutes-div .minutes-txt {
+    font-size: 130px;
+}
+
+.row-2 .minutes-div .period {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.row-2 .minutes-div .period h1 {
+    font-size: 45px;
+    text-align: center;
+}
+
+.row-3 {
+    text-align: left;
+    font-size: 10px;
+    padding: 0px 10px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    .clock-body {
+        height: 230px;
+        width: 95vw;
+    }
+
+    .row-2 .hours {
+        font-size: 70px;
+    }
+
+    .row-2 .dot {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .row-2 .minutes-div .minutes-txt {
+        font-size: 100px;
+    }
+
+    .row-2 .minutes-div .period {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .row-2 .minutes-div .period h1 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .time-zone-txt {
+        font-size: 15px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.toggle_button {
+    height: 20px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50px;
+    position: relative;
+    transition: 0.1s all linear;
+    position: absolute;
+}
+
+.toggle_button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #d6d6d6;
+    border-radius: 100%;
+    margin-top: 1px;
+    margin-left: 1px;
+    transition: 0.2s all linear;
+    background-image: url(moon.png);
+    background-size: 17px;
+    background-repeat: no-repeat;
+}
+
+#toggle:checked~.main_div>label>.toggle_button:before {
+    transform: translateX(20px);
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    -o-transform: translateX(20px);
+    background-image: url(sun.png);
+}
+
+/* #toggle:checked~.main_div>label>.toggle_button {
+    
+} */
+
+.blink {
+    visibility: hidden;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.bg-blue {
+    background-color: #ff2d2d;
+    box-shadow: 0px 0px 10px red,
+        0px 0px 40px red;
+}
